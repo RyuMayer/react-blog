@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint-config-htmlacademy", "stylelint-config-recess-order"],
+  "rules": {
+    "selector-max-id": 1
+  }
+}
