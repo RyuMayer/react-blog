@@ -1,9 +1,9 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactElement, useState } from 'react';
 
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 type TThemeProviderProps = {
-  children: ReactNode;
+  children: ReactElement;
 };
 
 const defaultTheme =
@@ -12,16 +12,8 @@ const defaultTheme =
 export function ThemeProvider({ children }: TThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  const defaultProps = useMemo(
-    () => ({
-      theme,
-      setTheme,
-    }),
-    [theme],
-  );
-
   return (
-    <ThemeContext.Provider value={defaultProps}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );

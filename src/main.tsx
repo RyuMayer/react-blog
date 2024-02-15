@@ -11,11 +11,10 @@ import { ThemeProvider } from './theme/ThemeProvider';
 
 const router = createBrowserRouter([
   {
-    path: '/',
     element: <Layout />,
     children: [
       {
-        index: true,
+        path: '/',
         element: (
           <Suspense fallback={<>Загрузка...</>}>
             <MainPageAsync />
