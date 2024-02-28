@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body[data-theme="dark"] {
+  @apply bg-neutral-900;
+}
+
+body[data-theme="light"] {
+  @apply bg-neutral-100;
+}

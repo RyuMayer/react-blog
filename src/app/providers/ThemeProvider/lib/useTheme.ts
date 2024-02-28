@@ -1,9 +1,6 @@
-import {
-  LOCAL_STORAGE_THEME_KEY,
-  Theme,
-  ThemeContext,
-} from '../theme/ThemeContext';
-import { useAppContext } from './useAppContext';
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
+
+import { useAppContext } from '@/hooks/useAppContext';
 
 type TUseThemeResult = {
   toggleTheme: () => void;
