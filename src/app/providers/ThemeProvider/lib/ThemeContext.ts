@@ -1,9 +1,6 @@
 import { createContext } from 'react';
 
-export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+import { Theme } from '@/shared/config/theme';
 
 export type TThemeContextData = {
   theme: Theme;
@@ -14,4 +11,3 @@ const ThemeContext = createContext<TThemeContextData | null>(null);
 ThemeContext.displayName = 'ThemeContext';
 
 export { ThemeContext };
-export const LOCAL_STORAGE_THEME_KEY = 'theme';

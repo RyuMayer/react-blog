@@ -7,5 +7,5 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="light"] {
-  @apply bg-neutral-100;
+  @apply bg-light-grey;
 }

@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 
 type TNavbarProps = {
   className?: string;
@@ -9,9 +8,8 @@ type TNavbarProps = {
 
 export function Navbar({ className }: TNavbarProps) {
   return (
-    <div className={clsx('py-5', [className])}>
-      <AppLink to={RoutePath.main}>Главная</AppLink>
-      <AppLink to={RoutePath.about}>Обо мне</AppLink>
+    <div className={clsx([className])}>
+      <ThemeSwitcher />
     </div>
   );
 }

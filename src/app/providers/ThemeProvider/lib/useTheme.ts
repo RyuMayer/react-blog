@@ -1,5 +1,5 @@
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
-
+import { LOCAL_STORAGE_THEME_KEY, Theme } from '@/shared/config/theme';
+import { ThemeContext } from './ThemeContext';
 import { useAppContext } from '@/hooks/useAppContext';
 
 type TUseThemeResult = {
