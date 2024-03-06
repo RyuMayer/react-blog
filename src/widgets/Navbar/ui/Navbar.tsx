@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { ThemeSwitcher } from '@/features/theme';
 
 type TNavbarProps = {
   className?: string;

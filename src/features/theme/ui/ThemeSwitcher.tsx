@@ -1,4 +1,4 @@
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/shared/theme/useTheme';
 
 type TThemeSwitcherProps = {
   className?: string;

@@ -1,7 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 
-import { ThemeContext } from '../lib/ThemeContext';
-import { LOCAL_STORAGE_THEME_KEY, Theme } from '@/shared/config/theme';
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 type TThemeProviderProps = {
   children: ReactElement;

@@ -1,18 +1,21 @@
-import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
 import HomeIcon from '../../assets/home.svg?react';
+import About from '../../assets/about.svg?react';
 
-import { AppRoutes } from '@/shared/config/route';
+import { AppRoutes } from '@/shared/constants/route';
+import { UiRouteLink } from '@/shared/ui/ui-route-link';
 
 const links = [
   {
     title: 'Главная',
     route: AppRoutes.MAIN,
+    icon: HomeIcon,
   },
   {
-    title: 'Обо мне',
+    title: 'О сайте',
     route: AppRoutes.ABOUT,
+    icon: About,
   },
 ];
 
@@ -22,27 +25,22 @@ export function Sidebar() {
       <div className="mb-5 text-center text-2xl font-bold	">
         RYU<span className="font-thin">.DEV</span>
       </div>
-      {links.map(({ title, route }) => (
-        <NavLink key={route} to={route}>
-          {({ isActive }) => (
-            <span
-              className={clsx(
-                'flex gap-2 rounded-md px-[25px] py-[10px] text-light-grey-200 transition hover:bg-[#f8f8f8]',
-                {
-                  'pointer-events-none bg-light-black font-medium text-white':
-                    isActive,
-                },
-              )}
-            >
-              <HomeIcon
+      {links.map(({ title, route, icon: Icon }) => (
+        <UiRouteLink
+          key={route}
+          to={route}
+          renderIcon={(isActive) =>
+            Icon && (
+              <Icon
                 className={clsx('fill-light-grey-200', {
                   'fill-white': isActive,
                 })}
               />
-              {title}
-            </span>
-          )}
-        </NavLink>
+            )
+          }
+        >
+          {title}
+        </UiRouteLink>
       ))}
     </div>
   );
