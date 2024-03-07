@@ -7,9 +7,11 @@ export function AppLayout() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="max-w-[50%] grow p-5">
+      <div className="flex max-w-[50%] grow flex-col p-5">
         <Navbar />
-        <Outlet />
+        <div className="flex grow">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

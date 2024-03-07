@@ -1,11 +1,13 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Suspense } from 'react';
 
-import { MainPage } from '@/pages/MainPage';
-import { AboutPage } from '@/pages/AboutPage';
 import { AppRoutes } from '@/shared/constants/route';
 import { ThemeProvider } from '@/shared/theme/ThemeProvider';
 import { AppLayout } from '@/app/app-layout';
+import { MainPage } from '@/pages/main-page';
+import { AboutPage } from '@/pages/about-page';
+import { NotFoundPage } from '@/pages/not-found-page';
+import { UiPageLoader } from '@/shared/ui/ui-page-loader';
 
 export function App() {
   const router = createBrowserRouter([
@@ -15,7 +17,7 @@ export function App() {
         {
           path: AppRoutes.MAIN,
           element: (
-            <Suspense fallback={<>Загрузка...</>}>
+            <Suspense fallback={<UiPageLoader />}>
               <MainPage />
             </Suspense>
           ),
@@ -23,10 +25,14 @@ export function App() {
         {
           path: AppRoutes.ABOUT,
           element: (
-            <Suspense fallback={<>Загрузка...</>}>
+            <Suspense fallback={<UiPageLoader />}>
               <AboutPage />
             </Suspense>
           ),
+        },
+        {
+          path: AppRoutes.NOT_FOUND,
+          element: <NotFoundPage />,
         },
       ],
     },
